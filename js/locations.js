@@ -1,6 +1,5 @@
-// Based on Todo list example 
-// An example Backbone application contributed by
-// [Jérôme Gravel-Niquet](http://jgn.me/). 
+// Based on Todo list example:
+// 	http://documentcloud.github.io/backbone/examples/todos/index.html
 
 // Load the application once the DOM is ready, using `jQuery.ready`:
 $(function(){
@@ -131,7 +130,6 @@ $(function(){
     
 		// Add all items in the **Locations** collection at once.
 		addAll: function() {
-			console.log('AppView -> addAll');
 			Locations.each(this.addOne, this);
 		},
 		

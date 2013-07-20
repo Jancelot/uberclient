@@ -17,21 +17,20 @@
   </head>
   <body>
   	<div id="location_app">
-		<div style="float:left;width:200px;" id="fav_container" class="fav_container">
-			<div class="fav_box">
-				Options:<br/>
-				<button type="button" id="button_add">Add</button>
+		<div  id="fav_container" class="fav_container">
+			<div class="fav_box" style="padding:10px;">
+				<a target="" class="mybutton" id="button_add">Add Current to Favs</a>
 			</div>
 			<div class="fav_box">
-				Favorites:<br/>
+				<label id="fav_title">Favorites:</label>
 				<ul id="fav_list"></ul>
 			</div>
 		</div>
-		<div style="float:left;height:100%;width:80%;" id="map_container">
+		<div id="map_container">
 			<div id="address_container">
-				<label>Address: </label><input id="address" type="text" style="width:300px;"/>
-			    <label>latitude: </label><input id="latitude" type="text"/>
-			    <label>longitude: </label><input id="longitude" type="text"/>
+				<label>Address: </label><input disabled id="address" type="text" style="width:300px;"/>
+			    <label>latitude: </label><input disabled id="latitude" type="text"/>
+			    <label>longitude: </label><input disabled id="longitude" type="text"/>
     		</div>
 			<div id="map-canvas"/>
 		</div>
@@ -41,12 +40,16 @@
     <!-- Templates -->
 	<script type="text/template" id="item-template">
 		<div class="view">
+			<div>
 			<a class="goto">
-			<label class="nickname"><%- nickname %></label><br/>
-			<label><%- address %></label><br/>
+				<label class="nickname"><%- nickname %></label><br/>
+				<label class="favaddress"><%- address %></label><br/>
 			</a>
-			<a class="edit">Rename</a>
-			<a class="destroy">Remove</a>
+			</div>
+			<div class="fav_edits">
+				<a target="" class="edit mybutton">Rename</a>
+				<a target="" class="destroy mybutton">Remove</a>
+			</div>
 		</div>
 	</script>
 
