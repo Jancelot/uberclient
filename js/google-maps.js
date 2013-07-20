@@ -23,7 +23,6 @@
 		geocoder = new google.maps.Geocoder();
 	
 		// init and place the marker
-		// TODO: use geolocation for initial position
 		moveMarker();
 		updateInfoWindow($('#address').val());
 	}
@@ -107,47 +106,5 @@
 	function openInfoWindow() {
 		this.info_window.open(map, marker);
 	}
-
-
-	// Try HTML5 geolocation
-	/*
-	if(navigator.geolocation) {
-		navigator.geolocation.getCurrentPosition(function(position) {
-		var pos = new google.maps.LatLng(position.coords.latitude,
-								   position.coords.longitude);
-
-		var infowindow = new google.maps.InfoWindow({
-			  map: map,
-			  position: pos,
-			  content: 'Location found using HTML5.'
-			  });
-
-		map.setCenter(pos);
-		}, function() {
-		   handleNoGeolocation(true);
-		});
-	} else {
-		// Browser doesn't support Geolocation
-		handleNoGeolocation(false);
-	}
-	setMarkerInfo();
-
-	function handleNoGeolocation(errorFlag) {
-		if (errorFlag) {
-			var content = 'Error: The Geolocation service failed.';
-		} else {
-			var content = 'Error: Your browser doesn\'t support geolocation.';
-		}
-
-		var options = {
-			map: map,
-			position: loc_sf,
-			content: content
-		};
-
-		var infowindow = new google.maps.InfoWindow(options);
-		map.setCenter(options.position);
-	}
-	*/
-	 
+	
 	google.maps.event.addDomListener(window, 'load', initialize);
